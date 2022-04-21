@@ -1,4 +1,4 @@
-// create a f(x)
+// create a f(x) that swaps the give value 
 
 
  function ListNode(val, next) {
@@ -18,5 +18,50 @@ l1.next.next.next.next.next = new ListNode(15)
 
 // current
 // 1 => 5 => 7 => 10 => 12 => 15 => null
-
+//1
+//10
 console.log(l1)
+
+////   1 =>       5 =>     7 => 10 =>      12 =>       15 => null
+// start list
+//  middle list
+//  end list
+
+// firstVal = 5
+// secondval = 12
+
+//startList + secondVal + middleList + firtsVal + endList
+
+/* 
+save head...
+moving pointer for the whole list
+loop to find first value save previous list
+save next after found value for middle and end list
+
+point to null if no end List
+*/
+
+function swap (l1, target1, target2) {
+  let current = li;
+  let head = current;
+  let start;
+  let middle;
+  let end;
+  
+  while(current !== null){
+    
+    current.next;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+console.log(swap(l1, 5, 12))
