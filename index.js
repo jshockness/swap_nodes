@@ -39,77 +39,127 @@ loop to find first value save previous list
 save next after found value for middle and end list
 
 point to null if no end List
+
+/*
+lol
+ :)
 */
-const findVal = () =>{
+const findVal = (list, target, target2) =>{
+  let current = list;
+  let prev = list;
+  let value;
   
-}
-function swap (list1, target1, target2) {
-  let current = list1;
-  let head = current;
-  let firstNode = null
-  let secondNode = null
-  
-  // let start = new ListNode(0);
-  // let startHead = start
-  // let middle = null;
-  // let middleHead = middle
-  // let end = null;
-  // let endHead = end
-  
-  while(current !== null){
-    // let next = current.next
-    // if (current.val !== target1 && current.val !== target2 && !middle && !end){
-    //   start.next = current
-    //   start = start.next
-    // }
-    
-    if(current.val === target1){
-       firstNode = current;
-       // middle = current.next
-       // // middle = middle.next
-      // current = current.next
-      // continue
+  while(current && current.next){
+    if(current.next.val === target){
+      prev = current;
+      value = current.next;
     }
-    
-    // if (current.val === target1 && current.val !== target2 && middle){
-    //   middle.next = current
-    //   middle = middle.next
-    // }
-
-    if(current.val === target2) {
-      secondNode = current;
-      // end = current.next;
-      // current = current.next
-      // continue
-    }
-
     current = current.next;
+    // ur current moves to the  end and return the final node
+    // that makes sense thanks =)
   }
+  return [value, prev];
+}
 
-  while (current !== null){
-     if(current.val === target1){
-       // swap second
-     }
-     if(current.val === target2){
-       // swap first
-     }
-
-    current = current.next
+findVal(l1, 5)
+function toArray(list){
+  let arr = []
+  while(list !== null){
+    arr.push(list.val)
+    list = list.next;
   }
+  console.log(arr)
+  return arr
+}
+toArray(l1)
+function swap(list1, target1, target2){
+  let [val1, prev1] = findVal(list1, target1)
+  let [val2, prev2] = findVal(list1, target2)
 
-////  start {1 =>   5 =>  7 => }     10 =>      12 =>       15 => null
-  // start.next = secondNode
-  // secondNode.next = middle
+  let firstNext = val1.next;
+  let secondNext = val2.next;
+  return firstNext;
+// curr1.next = 7, 10
   
-// console.log(firstNode, secondNode)
-  console.log('Start', start)
-  console.log('middle', middle)
-  console.log('end', end)
+  // console.log(curr1.next) //10
   
-  return 'hi'
 }
 
 
+let newArray1 = swap(l1, 5, 12)
+
+toArray(newArray1)
+// ////  start {1 =>   5 =>  7 => }     10 =>      12 =>       15 => null
+// ////  start {1 =>  12 =>  7 => }     10 =>      5  =>       15 => null
+// swap(l1, 5, 12)
+
+
+
+// function swap (list1, target1, target2) {
+//   let current = list1;
+//   let head = current;
+//   let firstNode = null
+//   let secondNode = null
+  
+//   // let start = new ListNode(0);
+//   // let startHead = start
+//   // let middle = null;
+//   // let middleHead = middle
+//   // let end = null;
+//   // let endHead = end
+  
+//   while(current !== null){
+//     // let next = current.next
+//     // if (current.val !== target1 && current.val !== target2 && !middle && !end){
+//     //   start.next = current
+//     //   start = start.next
+//     // }
+    
+//     if(current.val === target1){
+//        firstNode = current;
+//        // middle = current.next
+//        // // middle = middle.next
+//       // current = current.next
+//       // continue
+//     }
+    
+//     // if (current.val === target1 && current.val !== target2 && middle){
+//     //   middle.next = current
+//     //   middle = middle.next
+//     // }
+
+//     if(current.val === target2) {
+//       secondNode = current;
+//       // end = current.next;
+//       // current = current.next
+//       // continue
+//     }
+
+//     current = current.next;
+//   }
+
+//   while (current !== null){
+//      if(current.val === target1){
+//        // swap second
+//      }
+//      if(current.val === target2){
+//        // swap first
+//      }
+
+//     current = current.next
+//   }
+
+// ////  start {1 =>   5 =>  7 => }     10 =>      12 =>       15 => null
+//   // start.next = secondNode
+//   // secondNode.next = middle
+  
+// // console.log(firstNode, secondNode)
+//   console.log('Start', start)
+//   console.log('middle', middle)
+//   console.log('end', end)
+  
+//   return 'hi'
+// }
 
 
 
@@ -119,4 +169,6 @@ function swap (list1, target1, target2) {
 
 
 
-console.log(swap(l1, 5, 12))
+
+
+// console.log(swap(l1, 5, 12))
